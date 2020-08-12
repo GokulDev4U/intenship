@@ -23,7 +23,7 @@ def index():
             credit_score = int(request.form['credit_score'])
             income = float(request.form['income'])
 
-            filename = 'finalized_model_xgb.sav'
+            filename = 'finalized_model_RF.sav'
             loaded_model = pickle.load(open(filename, 'rb'))  # loading the model file from the storage
             data = np.array([[prior_default_t, years_employed, credit_score, income]])
             my_prediction = loaded_model.predict(data)
